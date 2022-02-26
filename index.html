@@ -1,200 +1,197 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Database</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  </head>
-  <body>
-    <!doctype html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Checkout example · Bootstrap v5.1</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>Checkout example · Bootstrap v5.1</title>
 
-
-
-    <!-- Bootstrap core CSS -->
-<link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#7952b3">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+
+  <!-- Bootstrap core CSS and jquery  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Favicons -->
+
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+    }
+  </style>
 
 
-    <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
-  </head>
-  <body class="bg-light">
+  <!-- Custom styles for this template -->
+  <link href="styles.css" rel="stylesheet">
+</head>
 
-<div class="container">
-  <main>
-            <div class="py-5 text-center">
-                <h2>New patient</h2>
-                <p class="lead">Please enter patients particulars
-                </p>
-            </div>
-            <div class="col-md-7 col-lg-8">
-                <h4 class="mb-3">Personal Particulars of Patient</h4>
-                <form class="needs-validation" novalidate action="/patients" method="post">
-                    <div class="row g-3">
-                        <div class="col-sm-6">
-                            <label for="fullName" class="form-label">1. Full Name as in NRIC</label>
-                            <input type="text" class="form-control" id="fullName" name="fullName" required>
-                            <div class="invalid-feedback">
-                                Valid name is required.
-                            </div>
-                        </div>
 
-                        <div class="col-12">
-                            <label for="UIN" class="form-label">2. NRIC or FIN no.:</label>
-                            <div class="input-group has-validation">
-                                <input type="text" class="form-control" id="UIN" placeholder="UIN" name="UIN" required>
-                                <div class="invalid-feedback">
-                                    Your UIN is required.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="DOB" class="form-label">3. Date of Birth:</label>
-                            <div class="input-group has-validation">
-                                <input type="text" class="form-control" id="DOB" name="DOB"
-                                    placeholder="E.g. 07/08/2001" required>
-                                <div class="invalid-feedback">
-                                    Your Date of Birth is required.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="email" class="form-label">4.Email Address</label>
-                            <input type="email" class="form-control" id="email" name='email'
-                                placeholder="you@example.com">
-                            <div class="invalid-feedback">
-                                Please enter a valid email address for any medical updates.
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="address" class="form-label">5. Residential Address</label>
-                            <input type="text" class="form-control" id="address" name='address'
-                                placeholder="Singapore Address" required>
-                            <div class="invalid-feedback">
-                                Please enter your Residential address.
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="mobileNumber" class="form-label">6. Mobile Number</label>
-                            <input type="text" class="form-control" id="mobileNumber" placeholder="8123 4567" required
-                                name="mobileNumber">
-                            <div class="invalid-feedback">
-                                Please enter your Mobile Number.
-                            </div>
-                        </div>
-
-                        <div class="col-md-5">
-                            <label for="country" class="form-label">7. Residential Status</label>
-                            <div class="form-check">
-                                <input id="singaporean" name="residentialStatus" type="radio" class="form-check-input"
-                                    checked required>
-                                <label class="form-check-label" for="Singaporean">Singapore Citizen</label>
-                            </div>
-                            <div class="form-check">
-                                <input id="PR" name="residentialStatus" type="radio" class="form-check-input" required>
-                                <label class="form-check-label" for="PR">Permanent Resident</label>
-                            </div>
-                            <div class="form-check">
-                                <input id="LTPH" name="residentialStatus" type="radio" class="form-check-input"
-                                    required>
-                                <label class="form-check-label" for="LTPH">Long-Term Pass Holder</label>
-                            </div>
-                            <div class="form-check">
-                                <input id="RSothers" name="residentialStatus" type="radio" class="form-check-input"
-                                    required>
-                                <label class="form-check-label" for="others">Others</label>
-                            </div>
-
-                            <hr class="my-4">
-
-                            <h4 class="mb-3">Medical Particulars of Patient</h4>
-                            <div class="col-sm-6">
-                                <label for="patientHeight" class="form-label mb-3">10. Patient's Height</label>
-                                <input type="text" class="form-control mb-3" id="patientHeight"
-                                    placeholder="Height in CM" value="" required>
-                                <div class="invalid-feedback">
-                                    Valid height is required.
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <label for="patientWeight" class="form-label mb-3">11. Patient's Weight</label>
-                                <input type="text" class="form-control mb-3" id="patientWeight"
-                                    placeholder="Weight in Kg" value="" required>
-                                <div class="invalid-feedback">
-                                    Valid height is required.
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <label for="medicalCondition" class="form-label mb-3">12. Medical History or Existing
-                                    Condition</label>
-                                <textarea class="form-control mb-3" name="medicalCondition" id="medicalCondition"
-                                    cols="30" rows="10"></textarea>
-                            </div>
-
-                            <hr class="my-4">
-
-                            <button class="w-100 btn btn-primary btn-lg" type="submit">Submit Details</button>
-                </form>
-            </div>
+<body class="">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand " href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+      </ul>
     </div>
-    </main>
+  </nav>
+
+  <div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <h2>New patient</h2>
+        <p class="lead">Please enter patients particulars
+        </p>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Personal Particulars of Patient</h4>
+        <form class="needs-validation" novalidate action="/patients" method="post">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="fullName" class="form-label">1. Full Name as in NRIC</label>
+              <input type="text" placeholder="e.g Jason Ng Wei Zhe" class="form-control" id="fullName" name="fullName" required>
+              <div class="invalid-feedback">
+                Valid name is required.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="UIN" class="form-label">2. NRIC or FIN no.:</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" id="UIN" placeholder="UIN" name="UIN" required>
+                <div class="invalid-feedback">
+                  Your UIN is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="DOB" class="form-label">3. Date of Birth:</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" id="DOB" name="DOB" placeholder="E.g. 07/08/2001" required>
+                <div class="invalid-feedback">
+                  Your Date of Birth is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">4.Email Address</label>
+              <input type="email" class="form-control" id="email" name='email' placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address for any medical updates.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">5. Residential Address</label>
+              <input type="text" class="form-control" id="address" name='address' placeholder="Singapore Address" required>
+              <div class="invalid-feedback">
+                Please enter your Residential address.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="mobileNumber" class="form-label">6. Mobile Number</label>
+              <input type="text" class="form-control" id="mobileNumber" placeholder="8123 4567" required name="mobileNumber">
+              <div class="invalid-feedback">
+                Please enter your Mobile Number.
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">7. Residential Status</label>
+              <div class="form-check">
+                <input id="singaporean" name="residentialStatus" type="radio" class="form-check-input" checked required>
+                <label class="form-check-label" for="Singaporean">Singapore Citizen</label>
+              </div>
+              <div class="form-check">
+                <input id="PR" name="residentialStatus" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="PR">Permanent Resident</label>
+              </div>
+              <div class="form-check">
+                <input id="LTPH" name="residentialStatus" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="LTPH">Long-Term Pass Holder</label>
+              </div>
+              <div class="form-check">
+                <input id="RSothers" name="residentialStatus" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="others">Others</label>
+              </div>
+
+              <hr class="my-4">
+
+              <h4 class="mb-3">Medical Particulars of Patient</h4>
+              <div class="col-sm-6">
+                <label for="patientHeight" class="form-label mb-3">10. Patient's Height</label>
+                <input type="text" class="form-control mb-3" id="patientHeight" placeholder="Height in CM" value="" required>
+                <div class="invalid-feedback">
+                  Valid height is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="patientWeight" class="form-label mb-3">11. Patient's Weight</label>
+                <input type="text" class="form-control mb-3" id="patientWeight" placeholder="Weight in KG" value="" required>
+                <div class="invalid-feedback">
+                  Valid height is required.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="medicalCondition" class="form-label mb-3">12. Medical History or Existing
+                  Condition</label>
+                <textarea class="form-control mb-3" name="medicalCondition" id="medicalCondition" cols="30" rows="10"></textarea>
+              </div>
+
+              <hr class="my-4">
+
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Submit Details</button>
+        </form>
+      </div>
+  </div>
+  </main>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017–2021 Company Name</p>
+    <p class="mb-1">&copy; Hospital Hospital Hospital</p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="#">Privacy</a></li>
       <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
+      <li class="list-inline-item"><a href="#">Contact Us</a></li>
     </ul>
   </footer>
-</div>
+  </div>
 
 
-    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-      <script src="form-validation.js"></script>
-  </body>
-</html>
+  <script src="form-validation.js"></script>
+</body>
 
-  </body>
 </html>
